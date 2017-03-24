@@ -6,12 +6,15 @@
     <title>ToDo list</title>
 </head>
 <body>
-    <h1>ToDo tasks</h1>
+    <h1>ToDo task app</h1>
 
-    <ul>
-        <c:forEach var="task" items="${taskList}">
-            <li>${task}</li>
-        </c:forEach>
-    </ul>
+    <button value="Show all tasks"/>
+    <button value="Add new"/>
+
+    <%--<ul>--%>
+        <%--<c:forEach var="task" items="${taskList}">--%>
+            <%--<li>${task}</li>--%>
+        <%--</c:forEach>--%>
+    <%--</ul>--%>
 </body>
 </html>
