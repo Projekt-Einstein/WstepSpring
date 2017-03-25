@@ -10,6 +10,13 @@ public class TaskListWrapper {
 
     private List<ToDoTask> taskList = new ArrayList<>();
 
+    public TaskListWrapper() {
+    }
+
+    public TaskListWrapper(List<ToDoTask> taskList) {
+        this.taskList = taskList;
+    }
+
     public boolean add(ToDoTask task) {
         return taskList.add(task);
     }

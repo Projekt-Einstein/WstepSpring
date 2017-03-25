@@ -28,4 +28,7 @@ public class ToDoTaskRepositoryImpl {
         taskList.add(task);
     }
 
+    public void updateTasks(List<ToDoTask> tasks) {
+        this.taskList = tasks;
+    }
 }

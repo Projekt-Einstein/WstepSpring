@@ -7,12 +7,21 @@
 </head>
 <body>
 
-    <form:form action="saveTasks" >
+    <c:if test="${saved}">
+        <h3 style="color: cornflowerblue">Saved successfully! :)</h3>
+    </c:if>
+
+    <form:form action="saveTasks" modelAttribute="taskListWrapper">
         <ul>
-            <c:forEach var="task" items="${taskList}">
-                <li>${task}</li>
+            <c:forEach var="task" items="${taskListWrapper.taskList}" varStatus="i">
+                <li>
+                    <form:checkbox path="taskList[${i.index}].finished" />
+                    <form:input path="taskList[${i.index}].description"/>
+                </li>
             </c:forEach>
         </ul>
+
+        <button type="submit">Save changes</button>
     </form:form>
 
 

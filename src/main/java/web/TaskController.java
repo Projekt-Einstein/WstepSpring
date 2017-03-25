@@ -1,5 +1,6 @@
 package web;
 
+import model.TaskListWrapper;
 import model.ToDoTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,9 +34,18 @@ public class TaskController {
 
     @GetMapping("/all")
     public String listAllTasks(Model model) {
-        model.addAttribute("taskList", taskRepository.getAllTasks());
+        model.addAttribute("taskListWrapper", new TaskListWrapper(taskRepository.getAllTasks()));
 
         return "taskList";
+    }
+
+    @PostMapping("/saveTasks")
+    public String saveTasks(@ModelAttribute("taskListWrapper") TaskListWrapper taskListWrapper, Model model) {
+        taskRepository.updateTasks(taskListWrapper.getTaskList());
+
+        model.addAttribute("saved", true);
+
+        return "redirect:/all";
     }
 
 }
