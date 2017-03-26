@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <c:if test="${param.saved}">
+    <c:if test="${not empty param.saved}">
         <h3 style="color: cornflowerblue">Saved successfully! :)</h3>
     </c:if>
 
