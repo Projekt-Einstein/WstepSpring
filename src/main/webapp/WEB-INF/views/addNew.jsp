@@ -11,7 +11,8 @@
         <label for="desc">Description</label>
         <form:input path="description" id="desc" type="text" />
 
-        <button type="submit">Save</button>
+        <br>
+        <a href="home">home</a><button type="submit">Save</button>
     </form:form>
 </body>
 </html>

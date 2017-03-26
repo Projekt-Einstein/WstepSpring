@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <c:if test="${not empty saved}">
+    <c:if test="${param.saved}">
         <h3 style="color: cornflowerblue">Saved successfully! :)</h3>
     </c:if>
 
@@ -21,7 +21,7 @@
             </c:forEach>
         </ul>
 
-        <button type="submit">Save changes</button>
+        <a href="home">home</a> <button type="submit">Save changes</button>
     </form:form>
 
 
